@@ -108,7 +108,7 @@ impl MimeFormat for Archive {
 
     fn from_mime(mime: &str) -> Option<crate::MimeType> {
         match mime {
-            "application/epub+zip" => Some(crate::MimeType::Archive(Archive::Zip)),
+            "application/epub+zip" => Some(crate::MimeType::Archive(Archive::Epub)),
             "application/zip" => Some(crate::MimeType::Archive(Archive::Zip)),
             "application/x-tar" => Some(crate::MimeType::Archive(Archive::Tar)),
             "application/vnd.rar" => Some(crate::MimeType::Archive(Archive::Rar)),
