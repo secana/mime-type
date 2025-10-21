@@ -1,0 +1,71 @@
+use crate::MimeFormat;
+use std::fmt::{self, Display, Formatter};
+
+pub enum Application {
+    Wasm,
+    Exe,
+    Dll,
+    Elf,
+    Bc,
+    Mach,
+    Class,
+    Dex,
+    Dey,
+    Der,
+    Obj,
+}
+
+impl Display for Application {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        let mime_str = match self {
+            Application::Wasm => "application/wasm",
+            Application::Exe => "application/vnd.microsoft.portable-executable",
+            Application::Dll => "application/vnd.microsoft.portable-executable",
+            Application::Elf => "application/x-executable",
+            Application::Bc => "application/llvm",
+            Application::Mach => "application/x-mach-binary",
+            Application::Class => "application/java",
+            Application::Dex => "application/vnd.android.dex",
+            Application::Dey => "application/vnd.android.dey",
+            Application::Der => "application/x-x509-ca-cert",
+            Application::Obj => "application/x-executable",
+        };
+        write!(f, "{}", mime_str)
+    }
+}
+
+impl MimeFormat for Application {
+    fn from_ext(ext: &str) -> Option<crate::MimeType> {
+        match ext {
+            "wasm" => Some(crate::MimeType::Application(Application::Wasm)),
+            "exe" => Some(crate::MimeType::Application(Application::Exe)),
+            "dll" => Some(crate::MimeType::Application(Application::Dll)),
+            "elf" => Some(crate::MimeType::Application(Application::Elf)),
+            "bc" => Some(crate::MimeType::Application(Application::Bc)),
+            "mach" => Some(crate::MimeType::Application(Application::Mach)),
+            "class" => Some(crate::MimeType::Application(Application::Class)),
+            "dex" => Some(crate::MimeType::Application(Application::Dex)),
+            "dey" => Some(crate::MimeType::Application(Application::Dey)),
+            "der" => Some(crate::MimeType::Application(Application::Der)),
+            "obj" => Some(crate::MimeType::Application(Application::Obj)),
+            _ => None,
+        }
+    }
+
+    fn from_mime(mime: &str) -> Option<crate::MimeType> {
+        match mime {
+            "application/wasm" => Some(crate::MimeType::Application(Application::Wasm)),
+            "application/vnd.microsoft.portable-executable" => {
+                Some(crate::MimeType::Application(Application::Exe))
+            }
+            "application/x-executable" => Some(crate::MimeType::Application(Application::Elf)),
+            "application/llvm" => Some(crate::MimeType::Application(Application::Bc)),
+            "application/x-mach-binary" => Some(crate::MimeType::Application(Application::Mach)),
+            "application/java" => Some(crate::MimeType::Application(Application::Class)),
+            "application/vnd.android.dex" => Some(crate::MimeType::Application(Application::Dex)),
+            "application/vnd.android.dey" => Some(crate::MimeType::Application(Application::Dey)),
+            "application/x-x509-ca-cert" => Some(crate::MimeType::Application(Application::Der)),
+            _ => None,
+        }
+    }
+}
