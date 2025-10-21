@@ -1,8 +1,8 @@
-name: cross-authenticode
+name: mime-type
 on:
   push:
     tags:
-      - '**'
+      - "**"
     branches:
       - main
   pull_request:

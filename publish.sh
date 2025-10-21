@@ -34,8 +34,14 @@ fi
 # Update the version in the Cargo.toml file
 sed -i'' -e "s/^version = \".*\"/version = \"$1\"/" Cargo.toml
 
+# Update Cargo.lock
+cargo check
+
+# Remove *-e files
+rm -f *-e
+
 # Commit the changes
-git add Cargo.toml
+git add .
 git commit -m "Release version to $1"
 
 # Tag the commit
