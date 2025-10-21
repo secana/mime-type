@@ -1,35 +1,67 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// Archive and compressed file formats.
+///
+/// Supports various compression and archive formats, as well as some document types.
 pub enum Archive {
+    /// Electronic Publication format (EPUB)
     Epub,
+    /// ZIP archive format
     Zip,
+    /// TAR archive format
     Tar,
+    /// RAR archive format
     Rar,
+    /// GZIP compressed format
     Gz,
+    /// BZIP2 compressed format
     Bz2,
+    /// BZIP3 compressed format
     Bz3,
+    /// 7-Zip archive format
     SevenZ,
+    /// XZ compressed format
     Xz,
+    /// Portable Document Format
     Pdf,
+    /// Shockwave Flash format
     Swf,
+    /// Rich Text Format
     Rtf,
+    /// Embedded OpenType font
     Eot,
+    /// PostScript document
     Ps,
+    /// SQLite database format
     Sqlite,
+    /// Nintendo NES ROM format
     Nes,
+    /// Chrome extension format
     Crx,
+    /// Microsoft Cabinet archive
     Cab,
+    /// Debian package format
     Deb,
+    /// Unix archive format
     Ar,
+    /// Unix compress format
     Z,
+    /// LZIP compressed format
     Lz,
+    /// RPM package format
     Rpm,
+    /// DICOM medical image format
     Dcm,
+    /// Zstandard compressed format
     Zst,
+    /// LZ4 compressed format
     Lz4,
+    /// Microsoft Installer package
     Msi,
+    /// CPIO archive format
     Cpio,
+    /// PAR2 parity archive
     Par2,
 }
 

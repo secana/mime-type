@@ -1,15 +1,27 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// Video file formats.
+///
+/// Supports common video container and codec formats.
 pub enum Video {
+    /// MPEG-4 Part 14 video format
     Mp4,
+    /// iTunes video format
     M4v,
+    /// Matroska video format
     Mkv,
+    /// WebM video format
     Webm,
+    /// QuickTime movie format
     Mov,
+    /// Audio Video Interleave format
     Avi,
+    /// Windows Media Video format
     Wmv,
+    /// MPEG video format
     Mpg,
+    /// Flash Video format
     Flv,
 }
 

@@ -1,17 +1,31 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// Application and executable file formats.
+///
+/// Supports various executable and binary application formats.
 pub enum Application {
+    /// WebAssembly binary format
     Wasm,
+    /// Windows executable format
     Exe,
+    /// Windows dynamic link library
     Dll,
+    /// Executable and Linkable Format (Linux/Unix)
     Elf,
+    /// LLVM bitcode format
     Bc,
+    /// Mach-O binary format (macOS)
     Mach,
+    /// Java class file
     Class,
+    /// Dalvik executable format (Android)
     Dex,
+    /// Optimized Dalvik executable (Android)
     Dey,
+    /// X.509 certificate (DER encoded)
     Der,
+    /// Object file format
     Obj,
 }
 

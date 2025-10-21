@@ -1,10 +1,17 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// Font file formats.
+///
+/// Supports common web and desktop font formats.
 pub enum Font {
+    /// TrueType Font format
     Ttf,
+    /// OpenType Font format
     Otf,
+    /// Web Open Font Format
     Woff,
+    /// Web Open Font Format 2
     Woff2,
 }
 

@@ -1,8 +1,13 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// E-book file formats.
+///
+/// Supports common digital book formats.
 pub enum Book {
+    /// Electronic Publication format
     Epub,
+    /// Mobipocket e-book format
     Mobi,
 }
 

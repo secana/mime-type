@@ -1,17 +1,31 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// Audio file formats.
+///
+/// Supports common audio formats including lossy and lossless codecs.
 pub enum Audio {
+    /// MIDI audio format
     Midi,
+    /// MPEG audio (MP3)
     Mpeg,
+    /// MPEG-4 audio format
     M4a,
+    /// OGG Vorbis audio format
     Ogg,
+    /// FLAC lossless audio format
     Flac,
+    /// WAV audio format
     Wav,
+    /// AMR audio format
     Amr,
+    /// AAC audio format
     Aac,
+    /// AIFF audio format
     Aiff,
+    /// DSF audio format
     Dsf,
+    /// APE audio format
     Ape,
 }
 

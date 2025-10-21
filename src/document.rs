@@ -1,15 +1,27 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// Document file formats.
+///
+/// Supports Microsoft Office and OpenDocument formats.
 pub enum Document {
+    /// Microsoft Word document
     Doc,
+    /// Microsoft Word document (Office Open XML)
     Docx,
+    /// Microsoft Excel spreadsheet
     Xls,
+    /// Microsoft Excel spreadsheet (Office Open XML)
     Xlsx,
+    /// Microsoft PowerPoint presentation
     Ppt,
+    /// Microsoft PowerPoint presentation (Office Open XML)
     Pptx,
+    /// OpenDocument text document
     Odt,
+    /// OpenDocument spreadsheet
     Ods,
+    /// OpenDocument presentation
     Odp,
 }
 

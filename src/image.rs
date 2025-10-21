@@ -1,20 +1,37 @@
 use crate::MimeFormat;
 use std::fmt::{self, Display, Formatter};
 
+/// Image file formats.
+///
+/// Supports common image formats including raster and vector types.
 pub enum Image {
+    /// JPEG image format
     Jpeg,
+    /// PNG image format
     Png,
+    /// GIF image format
     Gif,
+    /// WebP image format
     Webp,
+    /// Canon Raw 2 format
     Cr2,
+    /// TIFF image format
     Tif,
+    /// BMP image format
     Bmp,
+    /// HEIF image format
     Heif,
+    /// AVIF image format
     Avif,
+    /// JPEG XR format
     Jxr,
+    /// Adobe Photoshop document
     Psd,
+    /// ICO icon format
     Ico,
+    /// OpenRaster format
     Ora,
+    /// DjVu document format
     Djvu,
 }
 
