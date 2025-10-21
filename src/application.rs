@@ -1,4 +1,4 @@
-use crate::MimeFormat;
+use crate::{MimeFormat, MimeType};
 use std::fmt::{self, Display, Formatter};
 
 /// Application and executable file formats.
@@ -27,6 +27,8 @@ pub enum Application {
     Der,
     /// Object file format
     Obj,
+    /// Javascript Object Notation
+    Json
 }
 
 impl Display for Application {
@@ -43,42 +45,45 @@ impl Display for Application {
             Application::Dey => "application/vnd.android.dey",
             Application::Der => "application/x-x509-ca-cert",
             Application::Obj => "application/x-executable",
+            Application::Json => "application/json",
         };
         write!(f, "{}", mime_str)
     }
 }
 
 impl MimeFormat for Application {
-    fn from_ext(ext: &str) -> Option<crate::MimeType> {
+    fn from_ext(ext: &str) -> Option<MimeType> {
         match ext {
-            "wasm" => Some(crate::MimeType::Application(Application::Wasm)),
-            "exe" => Some(crate::MimeType::Application(Application::Exe)),
-            "dll" => Some(crate::MimeType::Application(Application::Dll)),
-            "elf" => Some(crate::MimeType::Application(Application::Elf)),
-            "bc" => Some(crate::MimeType::Application(Application::Bc)),
-            "mach" => Some(crate::MimeType::Application(Application::Mach)),
-            "class" => Some(crate::MimeType::Application(Application::Class)),
-            "dex" => Some(crate::MimeType::Application(Application::Dex)),
-            "dey" => Some(crate::MimeType::Application(Application::Dey)),
-            "der" => Some(crate::MimeType::Application(Application::Der)),
-            "obj" => Some(crate::MimeType::Application(Application::Obj)),
+            "wasm" => Some(MimeType::Application(Application::Wasm)),
+            "exe" => Some(MimeType::Application(Application::Exe)),
+            "dll" => Some(MimeType::Application(Application::Dll)),
+            "elf" => Some(MimeType::Application(Application::Elf)),
+            "bc" => Some(MimeType::Application(Application::Bc)),
+            "mach" => Some(MimeType::Application(Application::Mach)),
+            "class" => Some(MimeType::Application(Application::Class)),
+            "dex" => Some(MimeType::Application(Application::Dex)),
+            "dey" => Some(MimeType::Application(Application::Dey)),
+            "der" => Some(MimeType::Application(Application::Der)),
+            "obj" => Some(MimeType::Application(Application::Obj)),
+            "json" => Some(MimeType::Application(Application::Json)),
             _ => None,
         }
     }
 
-    fn from_mime(mime: &str) -> Option<crate::MimeType> {
+    fn from_mime(mime: &str) -> Option<MimeType> {
         match mime {
-            "application/wasm" => Some(crate::MimeType::Application(Application::Wasm)),
+            "application/wasm" => Some(MimeType::Application(Application::Wasm)),
             "application/vnd.microsoft.portable-executable" => {
-                Some(crate::MimeType::Application(Application::Exe))
+                Some(MimeType::Application(Application::Exe))
             }
-            "application/x-executable" => Some(crate::MimeType::Application(Application::Elf)),
-            "application/llvm" => Some(crate::MimeType::Application(Application::Bc)),
-            "application/x-mach-binary" => Some(crate::MimeType::Application(Application::Mach)),
-            "application/java" => Some(crate::MimeType::Application(Application::Class)),
-            "application/vnd.android.dex" => Some(crate::MimeType::Application(Application::Dex)),
-            "application/vnd.android.dey" => Some(crate::MimeType::Application(Application::Dey)),
-            "application/x-x509-ca-cert" => Some(crate::MimeType::Application(Application::Der)),
+            "application/x-executable" => Some(MimeType::Application(Application::Elf)),
+            "application/llvm" => Some(MimeType::Application(Application::Bc)),
+            "application/x-mach-binary" => Some(MimeType::Application(Application::Mach)),
+            "application/java" => Some(MimeType::Application(Application::Class)),
+            "application/vnd.android.dex" => Some(MimeType::Application(Application::Dex)),
+            "application/vnd.android.dey" => Some(MimeType::Application(Application::Dey)),
+            "application/x-x509-ca-cert" => Some(MimeType::Application(Application::Der)),
+            "application/json" => Some(MimeType::Application(Application::Json)),
             _ => None,
         }
     }

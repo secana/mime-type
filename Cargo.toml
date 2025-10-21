@@ -6,5 +6,6 @@ description = "A Rust library for handling MIME types."
 license = "MIT OR Apache-2.0"
 documentation = "https://docs.rs/mime-type"
 repository = "https://github.com/secana/mime-type"
-
+keywords = ["mime", "webdev", "file", "format"]
+categories = ["web-programming", "encoding", "data-formats", "parsing"]
 [dependencies]
