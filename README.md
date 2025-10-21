@@ -156,18 +156,27 @@ let mime = MimeType::from_ext("dll").unwrap();
 - `.JPG` (uppercase) will not match, only `.jpg` (lowercase) will
 - Always normalize extensions to lowercase before using this library
 
-### Ambiguous File Types
+## Publishing
 
-Some formats could belong to multiple categories:
+To publish a new version of the crate to crates.io, use the `publish.sh` script:
 
-- **PDF**: Currently in `Archive` category, could arguably be in `Document`
-- **RTF**: Currently in `Archive` category, but is a document format
-- **SVG**: Not currently supported, could be `Image` or `Application`
+```bash
+./publish.sh <version>
+```
 
-## Contributing
+For example:
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+```bash
+./publish.sh 0.2.0
+```
 
-## License
+The script will:
+1. Validate the version format (must be X.Y.Z)
+2. Check that you're on the `main` branch
+3. Verify the version isn't already in `Cargo.toml`
+4. Update the version in `Cargo.toml`
+5. Commit the changes with message "Release version to X.Y.Z"
+6. Create a git tag with the version number
+7. Push the tag and changes to the remote repository
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Note: The actual publishing to crates.io is done by the GitHub Actions workflow.
