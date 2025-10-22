@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// Application and executable file formats.
 ///
 /// Supports various executable and binary application formats.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Application {
     /// WebAssembly binary format
     Wasm,

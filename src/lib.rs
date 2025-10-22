@@ -42,6 +42,7 @@ pub use video::Video;
 ///
 /// This enum wraps the specific MIME type categories (Image, Video, Audio, etc.)
 /// and implements conversion from file extensions and MIME strings.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum MimeType {
     /// Image formats (JPEG, PNG, GIF, etc.)
     Image(Image),

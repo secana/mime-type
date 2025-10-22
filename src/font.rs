@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// Font file formats.
 ///
 /// Supports common web and desktop font formats.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Font {
     /// TrueType Font format
     Ttf,

@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// E-book file formats.
 ///
 /// Supports common digital book formats.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Book {
     /// Electronic Publication format
     Epub,

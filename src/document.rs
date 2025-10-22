@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// Document file formats.
 ///
 /// Supports Microsoft Office and OpenDocument formats.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Document {
     /// Microsoft Word document
     Doc,

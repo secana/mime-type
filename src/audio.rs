@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// Audio file formats.
 ///
 /// Supports common audio formats including lossy and lossless codecs.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Audio {
     /// MIDI audio format
     Midi,

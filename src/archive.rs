@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// Archive and compressed file formats.
 ///
 /// Supports various compression and archive formats, as well as some document types.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Archive {
     /// Electronic Publication format (EPUB)
     Epub,

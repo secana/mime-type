@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// Image file formats.
 ///
 /// Supports common image formats including raster and vector types.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Image {
     /// JPEG image format
     Jpeg,

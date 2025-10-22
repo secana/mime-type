@@ -4,6 +4,7 @@ use std::fmt::{self, Display, Formatter};
 /// Video file formats.
 ///
 /// Supports common video container and codec formats.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Video {
     /// MPEG-4 Part 14 video format
     Mp4,
