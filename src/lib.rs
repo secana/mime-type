@@ -16,6 +16,9 @@
 //! let mime = MimeType::from_mime("video/mp4").unwrap();
 //! ```
 
+#![forbid(unsafe_code)]
+#![warn(clippy::cargo)]
+
 mod application;
 mod archive;
 mod audio;
